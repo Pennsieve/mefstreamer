@@ -106,16 +106,14 @@ public class MEFStreamerMain {
 
             // Write values to CSV
             try (BufferedWriter valuesWriter = new BufferedWriter(new FileWriter(valuesFileName))) {
-                valuesWriter.write("Time Start,Time End,Value\n");
+                valuesWriter.write("Value\n");
 
                 // Loop over each page within the blocks
                 for (TimeSeriesPage page : streamer.getNextBlocks((int) numBlocks - 1)) {
-                    System.out.println("TIME START: " + page.timeStart);
-                    System.out.println("TIME END: " + page.timeEnd);
 
                     // Write the page data to the CSV
                     for (int value : page.values) {
-                        valuesWriter.write(String.format("%d,%d,%d\n", page.timeStart, page.timeEnd, value));
+                        valuesWriter.write(String.format("%d\n", value));
                     }
                 }
             }
