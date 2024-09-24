@@ -1,1 +1,2 @@
 Channel Name,GMT OFFSET,Sampling Frequency,Recording Start Time,Recording End Time,Min Value,Max Value
+Sin 10Hz,0.0,800.0,1549986912000000,1549986927000000,-1000,1000
